@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   render() {
-    // debugger;
+    debugger;
     return (
       <div className="App">
           <button onClick={() => this.handleOnClickItems()}>
@@ -34,8 +34,26 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-  debugger;
-  return { items: state.items }
+  // debugger;
+  return { orangePeel: ['a', 'b', 'c'] }
+  //state is the state of the store
+  //return value is the value of the props that are added to the app component.
 }
 
+//mapStateToProps() receives state as its first argument.
+
 export default connect(mapStateToProps)(App);
+
+//the mapStateToProps() method is executed with each change to the store's state.
+
+// const vanille = (milkshake) => {
+//   debugger;
+//   return { items: milkshake.items }
+// }
+//
+// export default connect(vanilla)(App);
+
+// So in other words, whatever function we pass to the connect()
+// function will be called each time the state changes, and the
+// first argument to that function, whatever its name, will be the
+// state of the store.
